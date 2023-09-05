@@ -15,9 +15,7 @@ const ToDo = ({ arrToDos }) => {
           <ToDoList>
             {arrToDos.map((toDoElem, arrIndex) => {
               return(
-              <div>
-                <ToDoItem key={ `to-do-Item${arrIndex}` } toDoElement={ toDoElem } />
-              </div>
+                <ToDoItem key={ `to-do-item-${arrIndex}` } toDoElement={ toDoElem } />
             );
             })}
           </ToDoList>

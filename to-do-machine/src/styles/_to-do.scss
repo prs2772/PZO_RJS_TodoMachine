@@ -14,10 +14,16 @@
 .todo-component__container-background {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, #7b7554, #8386dd, #a11692, #ff4f79, #ffb49a); /* Define los colores del degradado */
+  background: linear-gradient(
+    45deg,
+    #7b7554,
+    #8386dd,
+    #a11692,
+    #ff4f79,
+    #ffb49a
+  ); /* Define los colores del degradado */
   background-size: 400% 400%; /* Aumenta el tamaño para crear un efecto de movimiento */
   animation: fondoAnimado 25s ease infinite; /* Ajusta la duración y el tipo de animación */
-
 
   &::before {
     content: "";
@@ -26,9 +32,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/images/SubnaticaBG001.jpg');
+    background-image: url("./assets/images/SubnaticaBG001.jpg");
     opacity: 0.5;
-  
+
     /* Agregar un marco oscuro calc((100% - 90%) / 2) */
     border: 1.1rem solid rgba(0, 0, 0, 0.5);
     box-sizing: border-box; /* Incluye el borde en el tamaño total */
@@ -36,7 +42,7 @@
 }
 
 .todo-component__content {
-  &-container{
+  &-container {
     display: flex; /* Utilizamos flexbox para centrar verticalmente el contenido */
     align-items: center; /* Centra verticalmente el contenido */
     justify-content: center; /* Centra horizontalmente el contenido */
@@ -44,11 +50,10 @@
     padding-bottom: 3rem;
   }
 
-
-  &-background{
+  &-background {
     padding: 2rem 4rem;
     width: 63%;
-    background-image: url('./assets/images/NeonTreeMoon001.jpg');
+    background-image: url("./assets/images/NeonTreeMoon001.jpg");
     opacity: 0.69;
     background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor sin distorsionar */
     background-position: center; /* Centra la imagen de fondo */
@@ -59,11 +64,131 @@
 }
 
 /*Componente ToDoCounter*/
-.todo-counter__header{
+.todo-counter__header {
   font-size: 4.2rem;
   text-align: center;
   margin: 0;
   padding: 3.4rem;
+  &--bold{
+    font-weight: bolder;
+  }
+}
+
+/*Componente ToDoAdd*/
+.todo-add {
+  background-color: #61dafa;
+  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 6rem;
+  position: fixed;
+  bottom: 2.8rem;
+  right: 2.8rem;
+  font-weight: bold;
+  color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.2rem;
+  width: 6.2rem;
+
+  transform: rotate(0);
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: rotate(224deg);
+  }
 }
 
 /*Componente ToDoList*/
+.todo-item {
+  background-color: #FAFAFA;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+
+
+  p {
+    /* Estilos para los elementos <span> que son hermanos adyacentes después de '.mi-clase' */
+    color: #000; /* Por ejemplo, cambiar el color del texto a rojo */
+    font-weight: bold; /* Por ejemplo, hacer el texto en negrita */
+  }
+
+
+  &__icon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+
+    &--check-deactivated{
+      position: absolute;
+      left: 1rem;
+    }
+
+    &--check-activated{
+      color: #4caf50;
+    }
+
+    &--delete{
+      background-color: rgba($color: red, $alpha: 0.5);
+      border-radius: 2rem;
+      position: absolute;
+      top: -2rem;
+      right: 0;
+    }
+
+    &--delete:hover{
+      color: red;
+      background-color: rgba($color: #FAFAFA, $alpha: 0.5);
+    }
+  }
+
+
+  &__p{
+    margin: 2rem 0 2rem 2rem;
+    width: calc(100% - 11rem);
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+
+    &--completed{
+      text-decoration: line-through;
+      color: red;
+    }
+  }
+}
+
+/*Componente ToDoSearchBar*/
+.todo-search-bar__bar{
+  background:#f9fbfc;
+  border-radius:2px;
+  border:2px solid #202329;
+  margin:0 2rem;
+  height: 4rem;
+  width:calc(100% - 2rem);
+  font-size: 2.4rem;
+  text-align:center;
+  font-family:montserrat;
+  font-weight:400;
+  color:#1e1e1f;
+  box-shadow:0 5px 50px rgba(32,35,41,.25);
+  &::placeholder{
+    color:#a5a5a5;
+    font-family:montserrat;
+    font-weight:400
+  }
+
+
+  &:focus{
+    outline-color:#016c8a;
+  }
+}
