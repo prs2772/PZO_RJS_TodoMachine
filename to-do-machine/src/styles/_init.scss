@@ -32,3 +32,12 @@ img{
   width: calc(100vw*0.8);
   margin: 3rem auto;
 }
+
+/*Overwrite*/
+*{
+  color: $color-claro;
+  z-index: 0;
+}
+ul,ol{
+  list-style: none;
+}

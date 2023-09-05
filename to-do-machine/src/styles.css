@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*https://coolors.co/7b7554-17183b-a11692-ff4f79-ffb49as*/
 :root {
   --min-width: 320px; }
 
@@ -31,3 +33,111 @@ img {
 .container-img {
   width: calc(100vw*0.8);
   margin: 3rem auto; }
+
+/*Overwrite*/
+* {
+  color: #FFFFFF;
+  z-index: 0; }
+
+ul, ol {
+  list-style: none; }
+
+.app__header-container--h1 {
+  display: flex;
+  /* Utilizamos flexbox para centrar verticalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(45deg, rgba(23, 24, 59, 0.7), rgba(161, 22, 146, 0.9)); }
+
+.app__header-container-back--h1 {
+  background: linear-gradient(45deg, rgba(23, 24, 59, 0.7), rgba(161, 22, 146, 0.9));
+  border-radius: 7px;
+  /* Agrega esquinas redondeadas */
+  padding: 1.6rem 5.3rem 1.6rem 5.3rem; }
+
+.app__header--h1 {
+  font-family: "Press Start 2P", sans-serif;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(45deg, #ff828a, #ffb49a);
+  background-clip: text;
+  /* Hace que el fondo degradado solo se aplique detrás del texto */
+  -webkit-background-clip: text;
+  /* Para navegadores webkit (como Chrome) */
+  color: transparent;
+  /* Hace el texto transparente para que el degradado se muestre detrás */
+  display: inline-block;
+  /* Hace que el fondo se ajuste al texto */
+  z-index: 1; }
+
+/*Componente ToDo*/
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+.todo-component__container-background {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #7b7554, #8386dd, #a11692, #ff4f79, #ffb49a);
+  /* Define los colores del degradado */
+  background-size: 400% 400%;
+  /* Aumenta el tamaño para crear un efecto de movimiento */
+  animation: fondoAnimado 25s ease infinite;
+  /* Ajusta la duración y el tipo de animación */ }
+  .todo-component__container-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/images/SubnaticaBG001.jpg");
+    opacity: 0.5;
+    /* Agregar un marco oscuro calc((100% - 90%) / 2) */
+    border: 1.1rem solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    /* Incluye el borde en el tamaño total */ }
+
+.todo-component__content-container {
+  display: flex;
+  /* Utilizamos flexbox para centrar verticalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
+.todo-component__content-background {
+  padding: 2rem 4rem;
+  width: 63%;
+  background-image: url("./assets/images/NeonTreeMoon001.jpg");
+  opacity: 0.69;
+  background-size: cover;
+  /* Ajusta la imagen de fondo para cubrir todo el contenedor sin distorsionar */
+  background-position: center;
+  /* Centra la imagen de fondo */
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  /* Incluye el borde en el tamaño total */
+  border-radius: 8px;
+  /* Agrega esquinas redondeadas */ }
+
+/*Componente ToDoCounter*/
+.todo-counter__header {
+  font-size: 4.2rem;
+  text-align: center;
+  margin: 0;
+  padding: 3.4rem; }
+
+/*Componente ToDoList*/

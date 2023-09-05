@@ -1,0 +1,33 @@
+.app__header {
+  &-container{
+    &--h1{
+      display: flex; /* Utilizamos flexbox para centrar verticalmente el contenido */
+      align-items: center; /* Centra verticalmente el contenido */
+      justify-content: center; /* Centra horizontalmente el contenido */
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background: linear-gradient(45deg, rgba(23, 24, 59, 0.7), rgba(161, 22, 146, 0.9));
+    }
+
+    &-back--h1{
+      background: linear-gradient(45deg, rgba(23, 24, 59, 0.7), rgba(161, 22, 146, 0.9));
+      border-radius: 7px; /* Agrega esquinas redondeadas */
+      padding: 1.6rem 5.3rem 1.6rem 5.3rem;
+    }
+  }
+  
+
+  &--h1{
+    font-family: $font-videogames;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(45deg, $col-pal1-muy-claro, $col-pal1-mas-claro);
+    background-clip: text; /* Hace que el fondo degradado solo se aplique detrás del texto */
+    -webkit-background-clip: text; /* Para navegadores webkit (como Chrome) */
+    color: transparent; /* Hace el texto transparente para que el degradado se muestre detrás */
+    display: inline-block; /* Hace que el fondo se ajuste al texto */
+    z-index: 1;
+  }
+}

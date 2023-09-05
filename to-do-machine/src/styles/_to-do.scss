@@ -1,0 +1,69 @@
+/*Componente ToDo*/
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.todo-component__container-background {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #7b7554, #8386dd, #a11692, #ff4f79, #ffb49a); /* Define los colores del degradado */
+  background-size: 400% 400%; /* Aumenta el tamaño para crear un efecto de movimiento */
+  animation: fondoAnimado 25s ease infinite; /* Ajusta la duración y el tipo de animación */
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/images/SubnaticaBG001.jpg');
+    opacity: 0.5;
+  
+    /* Agregar un marco oscuro calc((100% - 90%) / 2) */
+    border: 1.1rem solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  }
+}
+
+.todo-component__content {
+  &-container{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+
+  &-background{
+    padding: 2rem 4rem;
+    width: 63%;
+    background-image: url('./assets/images/NeonTreeMoon001.jpg');
+    opacity: 0.69;
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor sin distorsionar */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+    border-radius: 8px; /* Agrega esquinas redondeadas */
+  }
+}
+
+/*Componente ToDoCounter*/
+.todo-counter__header{
+  font-size: 4.2rem;
+  text-align: center;
+  margin: 0;
+  padding: 3.4rem;
+}
+
+/*Componente ToDoList*/
