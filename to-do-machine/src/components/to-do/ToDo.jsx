@@ -10,7 +10,9 @@ const ToDo = ({ arrToDos }) => {
     <>
       <div className="todo-component__content-container">
         <div className="todo-component__content-background">    
-          <ToDoCounter numCompleted={3} numTotal={33}/>
+          <ToDoCounter 
+            numCompleted={3} 
+            numTotal={33}/>
           <ToDoSearchBar />
           <ToDoList>
             {arrToDos.map((toDoElem, arrIndex) => {
