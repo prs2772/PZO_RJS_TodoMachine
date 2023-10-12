@@ -5,17 +5,33 @@ import { ToDoItem } from "./ToDoItem";
 import { ToDoSearchBar } from "./ToDoSearchBar.jsx";
 import { ToDoAdd } from "./ToDoAdd.jsx";
 
-const ToDo = ({ arrToDos }) => {
+const ToDo = () => {
+  const [state, setState] = React.useState({
+    searchValue: '',
+    toDos: [
+      { description: `Create GitHub account`, isCompleted: true },
+      { description: `Make first commit`, isCompleted: true },
+      { description: `Finish ToDo project`, isCompleted: false },
+      { description: `Connect to an external API`, isCompleted: true },
+      { description: `Lalaland`, isCompleted: true },
+    ]
+  });
+  
+  console.log(`(${state.prueba})Se ha escrito: ${state.searchValue}`);
+
   return(
     <>
       <div className="todo-component__content-container">
         <div className="todo-component__content-background">    
           <ToDoCounter 
-            numCompleted={3} 
-            numTotal={33}/>
-          <ToDoSearchBar />
+            numCompleted={state.toDos.filter(toDo => toDo.isCompleted === true).length} 
+            numTotal={state.toDos.length}/>
+          <ToDoSearchBar 
+            state={state}
+            setState={setState}
+          />
           <ToDoList>
-            {arrToDos.map((toDoElem, arrIndex) => {
+            {state.toDos.map((toDoElem, arrIndex) => {
               return(
                 <ToDoItem key={ `to-do-item-${arrIndex}` } toDoElement={ toDoElem } />
             );

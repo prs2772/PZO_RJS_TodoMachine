@@ -1,16 +1,6 @@
-import { useState } from 'react'
 import { ToDo } from './to-do/ToDo.jsx';
 
-const arrToDos = [
-  { description: `Create GitHub account`, isCompleted: true },
-  { description: `Make first commit`, isCompleted: true },
-  { description: `Finish ToDo project`, isCompleted: false },
-  { description: `Connect to an external API`, isCompleted: true },
-];
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className='todo-component__container-background'>
@@ -20,7 +10,7 @@ function App() {
           </div>
         </div>
         <div>
-          <ToDo arrToDos={ arrToDos }/>
+          <ToDo />
         </div>
       </div>
     </>
