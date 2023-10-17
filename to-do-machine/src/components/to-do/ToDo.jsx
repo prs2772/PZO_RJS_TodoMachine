@@ -9,15 +9,16 @@ const ToDo = () => {
   const [state, setState] = React.useState({
     searchValue: '',
     toDos: [
-      { description: `Create GitHub account`, isCompleted: true },
-      { description: `Make first commit`, isCompleted: true },
-      { description: `Finish ToDo project`, isCompleted: false },
-      { description: `Connect to an external API`, isCompleted: true },
-      { description: `Lalaland`, isCompleted: true },
-    ]
+      { description: `Create GitHub account`, isCompleted: false, numIndex: 0 },
+      { description: `Make first commit`, isCompleted: false, numIndex: 0 },
+      { description: `Finish ToDo project`, isCompleted: false, numIndex: 0 },
+      { description: `Connect to an external API`, isCompleted: false, numIndex: 0 },
+      { description: `Lalaland á`, isCompleted: true, numIndex: 0 },
+    ],
+    searchedToDos: [],
   });
   
-  console.log(`(${state.prueba})Se ha escrito: ${state.searchValue}`);
+  console.log(`Se ha escrito: ${state.searchValue}, ${state.searchedToDos}`);
 
   return(
     <>
@@ -31,11 +32,13 @@ const ToDo = () => {
             setState={setState}
           />
           <ToDoList>
-            {state.toDos.map((toDoElem, arrIndex) => {
-              return(
-                <ToDoItem key={ `to-do-item-${arrIndex}` } toDoElement={ toDoElem } />
-            );
-            })}
+            {
+              state.searchedToDos.map((toDoElem, arrIndex) => {
+                return(
+                  <ToDoItem key={ `to-do-item-${arrIndex}` } toDoElement={ toDoElem } />
+                );
+              })
+            }
           </ToDoList>
           <ToDoAdd />
         </div>

@@ -134,7 +134,8 @@ ul, ol {
 .todo-component__content-background {
   padding: 2rem 4rem;
   width: 63%;
-  background-image: url("./assets/images/NeonTreeMoon001.jpg");
+  /*background-image: url("./assets/images/NeonTreeMoon001.jpg");*/
+  background-color: #a11692;
   opacity: 0.69;
   background-size: cover;
   /* Ajusta la imagen de fondo para cubrir todo el contenedor sin distorsionar */
@@ -222,9 +223,18 @@ ul, ol {
     font-size: 1.7rem;
     line-height: 2.1rem;
     font-weight: 400; }
-    .todo-item__p--completed {
+    .todo-item__p span {
+      color: black;
+      text-decoration: none;
+      font-size: 1.7rem;
+      line-height: 2.1rem;
+      font-weight: bolder; }
+    .todo-item__p--completed span span {
       text-decoration: line-through;
-      color: red; }
+      color: red;
+      font-size: 1.7rem;
+      line-height: 2.1rem;
+      font-weight: bolder; }
 
 /*Componente ToDoSearchBar*/
 .todo-search-bar__bar {
